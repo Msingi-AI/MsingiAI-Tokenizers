@@ -26,8 +26,7 @@ We welcome code contributions for:
 - Test tokenizers with diverse datasets to ensure robustness.  
 
 ### 5. 🤝 Community Engagement  
-- Share ideas, feedback, or challenges in the [Discussions](https://github.com/your-repo/discussions) section.  
-- Help others in the community by answering questions or reviewing pull requests.  
+- Share ideas, feedback, or challenges in our [Discord community](https://discord.gg/your-discord-link).- Help others in the community by answering questions or reviewing pull requests.  
 
 ## Contribution Workflow  
 
@@ -93,6 +92,5 @@ By contributing to this repository, you agree that your contributions will be li
 
 If you’re stuck or have questions:  
 - Open an issue [here](https://github.com/Msingi-AI/MsingiAI-Tokenizers/issues).  
-- Join our [Discussion forum](https://github.com/MsingiAI-Tokenizers/discussions).  
 
 We’re excited to collaborate with you to build impactful tools for African NLP. Let’s make it happen! 🚀  
