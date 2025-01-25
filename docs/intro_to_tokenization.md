@@ -29,24 +29,81 @@ In summary, tokenization is a foundational process in NLP, enabling machines to 
 
 ## Types of Tokenization  
 
+Tokenization can be broadly classified into different types, depending on how the text is split into smaller units. Each type serves a specific purpose based on the characteristics of the language and the NLP task at hand. Below are the main types of tokenization:
+
 ### 1. **Word Tokenization**  
-Breaks text into individual words.  
-- Example:  
+Word tokenization is the most common and straightforward form, where text is split into individual words. It’s useful for languages where words are the primary building blocks of meaning, and the boundaries between words are clear (e.g., English, Spanish).  
+
+- **Example**:  
   **Input**: "Welcome to MsingiAI!"  
-  **Output**: ["Welcome", "to", "MsingiAI", "!"]  
+  **Output**: ["Welcome", "to", "MsingiAI", "!"]
+
+This method is simple but may struggle with complex languages that involve contractions, clitics, or word boundaries that are not clearly defined.
 
 ### 2. **Subword Tokenization**  
-Splits words into smaller meaningful units, especially useful for handling unknown or rare words. Commonly used in models like BERT and GPT.  
-- Example:  
+Subword tokenization splits words into smaller meaningful units, like prefixes, suffixes, or roots. This approach is particularly useful for handling rare or unknown words, as it enables models to break down words into components that might be encountered more frequently. Subword tokenization is common in models like **BERT** and **GPT**, which use methods like **Byte Pair Encoding (BPE)** or **WordPiece**.
+
+- **Example**:  
   **Input**: "unhappiness"  
-  **Output**: ["un", "happiness"]  
+  **Output**: ["un", "happiness"]
+
+Subword tokenization can help mitigate issues with **out-of-vocabulary (OOV)** words and allows models to generalize better by reusing common subword units.
 
 ### 3. **Character Tokenization**  
-Treats each character as a token, helpful for languages with complex word forms.  
-- Example:  
-  **Input**: "NLP"  
-  **Output**: ["N", "L", "P"]  
+Character tokenization treats each character in a text as a separate token. This is particularly useful for languages with complex morphology or when dealing with noisy text where word boundaries might be ambiguous (e.g., misspellings, concatenated words). It’s also valuable for languages with non-space-separated words.
 
+- **Example**:  
+  **Input**: "NLP"  
+  **Output**: ["N", "L", "P"]
+
+While character tokenization can be more flexible, it leads to longer sequences of tokens, which can increase computational cost. However, it works well when fine-grained understanding is needed, such as in **spell correction** or **morphological analysis**.
+
+### 4. **Sentence Tokenization**  
+Sentence tokenization, or **sentence segmentation**, is the process of dividing a block of text into individual sentences. It is useful for tasks that require sentence-level analysis, such as sentiment analysis, machine translation, or summarization. Sentence tokenization is often used as a pre-processing step before applying other forms of tokenization.
+
+- **Example**:  
+  **Input**: "Hello world. This is tokenization."  
+  **Output**: ["Hello world.", "This is tokenization."]
+
+This form of tokenization is particularly important for languages with complex sentence structures or punctuation rules.
+
+### 5. **Subsentential or Phrase Tokenization**  
+This approach divides text into phrases or chunks of meaningful content that might not necessarily be full sentences. It is commonly used in tasks like **dependency parsing** or **machine translation**, where the relationships between smaller chunks of text are important.
+
+- **Example**:  
+  **Input**: "I have a red car."  
+  **Output**: ["I have", "a red", "car"]
+
+This method helps capture meaningful semantic units beyond individual words, making it useful for tasks involving **compositional semantics**.
+
+### 6. **Byte Pair Encoding (BPE)**  
+Byte Pair Encoding (BPE) is a subword tokenization method used to iteratively merge the most frequent pairs of characters or subwords into a new token. It’s commonly used in neural machine translation and other large-scale language models. BPE helps reduce the number of tokens in a text by splitting uncommon words into smaller, more frequent components.
+
+- **Example**:  
+  **Input**: "low" "lower"  
+  **Output**: ["lo", "wer"]
+
+BPE helps handle rare words by breaking them into subword units that are more likely to appear in other parts of the corpus, enhancing generalization.
+
+### 7. **WordPiece Tokenization**  
+WordPiece is similar to BPE but uses a probabilistic approach to split words into subword units. It’s commonly used in models like **BERT**. The goal is to build a vocabulary of subword units that maximizes the likelihood of the data given the vocabulary.
+
+- **Example**:  
+  **Input**: "unhappiness"  
+  **Output**: ["un", "happiness"]
+
+WordPiece helps with handling OOV words and also ensures the tokenization process can effectively handle various linguistic nuances.
+
+### 8. **SentencePiece**  
+SentencePiece is a data-driven, unsupervised text tokenizer and detokenizer. It can handle text in any language and is especially useful when working with languages that don’t use spaces to separate words (e.g., Chinese, Japanese). It’s often used with models like **T5** and **XLM-R**.
+
+- **Example**:  
+  **Input**: "tokenization"  
+  **Output**: ["token", "ization"]
+
+SentencePiece is flexible and effective for handling languages with non-standardized spaces or punctuation.
+
+The type of tokenization you choose depends on the language, the task, and the available resources. For languages with complex morphology or those that involve code-switching and tonal variations, choosing the right tokenization strategy is crucial to ensuring effective NLP models.
 
 ## Challenges in Tokenization for African Languages  
 
