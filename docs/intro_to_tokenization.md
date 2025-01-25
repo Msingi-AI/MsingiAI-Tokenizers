@@ -122,7 +122,7 @@ Code-switching (switching between languages within a single sentence or conversa
 Many African languages, such as **Yoruba**, **Igbo**, and **Zulu**, are tonal. This means that the meaning of a word can change depending on the pitch or tone used. However, tonal marks are rarely included in written forms of these languages, which complicates tokenization.
 
 - **Example**:  
-  In **Yoruba**, "Ọkà" (corn) and "Ọ̀kà" (python) differ only in the tone, but tokenizers may not distinguish between these words without tone markers. This ambiguity requires special consideration during tokenization to preserve the intended meaning.
+  In **Kipsigis**, "Moet" (stomach) and "Moet" (wound) differ only in the tone, but tokenizers may not distinguish between these words without tone markers. This ambiguity requires special consideration during tokenization to preserve the intended meaning.
 
 ### 4. **Non-Standardized Orthography**
 Several African languages do not have a single, widely accepted orthography, leading to inconsistencies in spelling and writing. For instance, there are multiple ways to spell words in languages like **Shona** and **Hausa**, and written forms can vary across regions.
