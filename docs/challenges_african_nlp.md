@@ -50,8 +50,8 @@ In many African countries, multilingualism is the norm, with speakers switching 
 | **Language Pair**  | **Example of Code-Switching**                                | **Challenges for NLP**                                 |
 |--------------------|--------------------------------------------------------------|--------------------------------------------------------|
 | **Swahili + English** | "Ninaenda to the shop" ("I am going to the shop")           | Difficulty in tokenizing and processing mixed-language text. |
-| **Hausa + English**  | "Ya tafi to the market" ("He went to the market")           | Need for models that can handle both languages' syntax and grammar. |
-| **Yoruba + Pidgin**  | "Mo de go, but I no sabi" ("I have to go, but I don’t know")| Identifying and processing non-standard lexical forms. |
+
+#Add Examples You see in Your Language
 
 ## 1.5 **Opportunities in Addressing Linguistic Diversity**
 
