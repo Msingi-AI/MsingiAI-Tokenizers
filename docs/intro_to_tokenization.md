@@ -107,23 +107,74 @@ The type of tokenization you choose depends on the language, the task, and the a
 
 ## Challenges in Tokenization for African Languages  
 
-African languages present unique challenges in tokenization due to their:  
+Tokenization for African languages comes with a unique set of challenges due to the continent’s linguistic diversity, intricate morphology, and various sociocultural factors. These challenges make it harder to apply traditional tokenization methods, and thus require innovative approaches. Below are some of the main challenges faced when tokenizing African languages:
 
-1. **Agglutinative and Inflectional Morphology**:  
-   - Example: In Kiswahili, "nikupenda" means "I love you," but it is a combination of several morphemes:  
-     - *ni* (I)  
-     - *ku* (you)  
-     - *penda* (love)  
+### 1. **Agglutinative and Inflectional Morphology**
+Many African languages, such as **Swahili**, **Kinyarwanda**, and **Turkana**, are highly agglutinative or inflectional. This means that a single word can consist of several morphemes (the smallest units of meaning) combined into one. The challenge here is that tokenization must correctly identify and separate these morphemes to properly analyze the word's structure.
 
-2. **Code-Switching**:  
-   - Example: "Nimebook ticket online" (Swahili-English mix). Tokenizers must handle mixed-language sentences effectively.  
+- **Example**:  
+  In **Swahili**, "nikupenda" translates to "I love you," but it contains multiple morphemes:
+  - *ni* (I)
+  - *ku* (you)
+  - *penda* (love)
+  
+Tokenizing this correctly requires the model to account for these subword units, and traditional word tokenization methods may fail in such cases.
 
-3. **Tonal Variations**:  
-   - In some languages like Yoruba, tone changes the meaning of words. Example:  
-     - "Ọkà" (corn) vs. "Ọ̀kà" (python).  
+### 2. **Code-Switching**
+Code-switching (switching between languages within a single sentence or conversation) is very common in many African communities. African speakers often switch between their native languages and colonial languages such as English, French, or Portuguese, as well as with other regional languages.
 
-4. **Non-Standardized Orthography**:  
-   - Many African languages lack a single, widely accepted writing system, leading to inconsistencies in tokenization.  
+- **Example**:  
+  A sentence like "Nimebook ticket online" mixes **Swahili** and **English**. Tokenizers trained on monolingual text might fail to properly segment this mixed-language input. Effective tokenization methods need to account for multiple languages in a sentence and handle the transitions seamlessly.
+
+### 3. **Tonal Variations**
+Many African languages, such as **Yoruba**, **Igbo**, and **Zulu**, are tonal. This means that the meaning of a word can change depending on the pitch or tone used. However, tonal marks are rarely included in written forms of these languages, which complicates tokenization.
+
+- **Example**:  
+  In **Yoruba**, "Ọkà" (corn) and "Ọ̀kà" (python) differ only in the tone, but tokenizers may not distinguish between these words without tone markers. This ambiguity requires special consideration during tokenization to preserve the intended meaning.
+
+### 4. **Non-Standardized Orthography**
+Several African languages do not have a single, widely accepted orthography, leading to inconsistencies in spelling and writing. For instance, there are multiple ways to spell words in languages like **Shona** and **Hausa**, and written forms can vary across regions.
+
+- **Example**:  
+  In **Hausa**, you may encounter variations in spelling like "kasuwa" (market) or "kasuwo," which complicates the tokenizer’s ability to standardize these words for processing. A tokenizer must handle multiple spellings of the same word and account for regional variations.
+
+### 5. **Lack of Written Traditions for Many African Languages**
+Many African languages are predominantly oral, and they lack a standardized written tradition. This means that there is a limited availability of **corpora** or written text for these languages, which makes it challenging to train tokenizers effectively. In many cases, tokenizers are trained on a small amount of data, which can lead to poor performance.
+
+- **Example**:  
+  **Tigrinya**, spoken in Eritrea and Ethiopia, may not have enough written material to develop robust tokenization models. Consequently, tokenizers that rely on large corpora will struggle when applied to these languages.
+
+### 6. **Multilingualism**
+In many African countries, multilingualism is the norm. People often speak multiple languages fluently and switch between them, making tokenization more challenging. For example, a person may mix **English**, **Arabic**, and **Swahili** in a single sentence. Tokenization models need to be able to detect language boundaries and segment text accordingly.
+
+- **Example**:  
+  "Anaenda to the market" (meaning "He/she is going to the market" in Swahili and English).  
+  Tokenizing such a sentence requires detecting that "to the" belongs to English and "Anaenda" to Swahili, without disrupting the flow of the sentence.
+
+### 7. **Long Words and Compound Forms**
+In some African languages, words can be long and made up of several smaller meaningful units, sometimes forming **compounds**. This is particularly true for languages that have rich **derivational morphology** (the creation of new words through affixes).
+
+- **Example**:  
+  In **Xhosa**, a single word like "ndiyabhalela" (meaning "I am writing to you") is composed of several morphemes:
+  - *ndi* (I)
+  - *ya* (am)
+  - *bhalela* (write to)
+
+Tokenization must identify and separate these components correctly to ensure accurate understanding of the word structure.
+
+### 8. **Borrowed Words**
+Many African languages borrow extensively from colonial languages (like **English**, **French**, or **Portuguese**), creating hybrid vocabularies that pose challenges for tokenization. Words that are borrowed from these languages may have unique tokenization needs, especially when dealing with compound words that combine native and foreign terms.
+
+- **Example**:  
+  In **Zulu**, "ijoli" is a borrowed word from English "jolly" or "holiday." Tokenizers need to recognize borrowed words and treat them as valid tokens, but sometimes this is overlooked in monolingual tokenization systems.
+
+### 9. **Resource Scarcity**
+Due to the underrepresentation of African languages in NLP research, many of these languages suffer from **low-resource status**. This means there is limited access to annotated text, labeled data, or large corpora to train effective tokenization models.
+
+- **Example**:  
+  **Haitian Creole** and other low-resource languages often lack enough data for developing accurate tokenization systems. This data scarcity makes it difficult for tokenizers to generalize well across various use cases.
+
+These challenges require careful consideration when designing tokenization strategies for African languages. Tailoring tokenization models to the specific features of these languages will lead to more accurate and effective NLP tools for African languages. As the field grows, ongoing research and collaboration are key to developing solutions that work in these multilingual, morphologically complex environments. 
 
 
 ## Tokenization Approaches  
