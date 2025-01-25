@@ -92,7 +92,7 @@ By contributing to this repository, you agree that your contributions will be li
 ## Need Help?  
 
 If you’re stuck or have questions:  
-- Open an issue [here](https://github.com/MsingiAI-Tokenizers/issues).  
+- Open an issue [here](https://github.com/Msingi-AI/MsingiAI-Tokenizers/issues).  
 - Join our [Discussion forum](https://github.com/MsingiAI-Tokenizers/discussions).  
 
 We’re excited to collaborate with you to build impactful tools for African NLP. Let’s make it happen! 🚀  
