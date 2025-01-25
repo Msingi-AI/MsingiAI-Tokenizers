@@ -112,14 +112,6 @@ Tokenization for African languages comes with a unique set of challenges due to 
 ### 1. **Agglutinative and Inflectional Morphology**
 Many African languages, such as **Swahili**, **Kinyarwanda**, and **Turkana**, are highly agglutinative or inflectional. This means that a single word can consist of several morphemes (the smallest units of meaning) combined into one. The challenge here is that tokenization must correctly identify and separate these morphemes to properly analyze the word's structure.
 
-- **Example**:  
-  In **Swahili**, "nikupenda" translates to "I love you," but it contains multiple morphemes:
-  - *ni* (I)
-  - *ku* (you)
-  - *penda* (love)
-  
-Tokenizing this correctly requires the model to account for these subword units, and traditional word tokenization methods may fail in such cases.
-
 ### 2. **Code-Switching**
 Code-switching (switching between languages within a single sentence or conversation) is very common in many African communities. African speakers often switch between their native languages and colonial languages such as English, French, or Portuguese, as well as with other regional languages.
 
@@ -154,12 +146,6 @@ In many African countries, multilingualism is the norm. People often speak multi
 ### 7. **Long Words and Compound Forms**
 In some African languages, words can be long and made up of several smaller meaningful units, sometimes forming **compounds**. This is particularly true for languages that have rich **derivational morphology** (the creation of new words through affixes).
 
-- **Example**:  
-  In **Xhosa**, a single word like "ndiyabhalela" (meaning "I am writing to you") is composed of several morphemes:
-  - *ndi* (I)
-  - *ya* (am)
-  - *bhalela* (write to)
-
 Tokenization must identify and separate these components correctly to ensure accurate understanding of the word structure.
 
 ### 8. **Borrowed Words**
@@ -175,7 +161,6 @@ Due to the underrepresentation of African languages in NLP research, many of the
   **Haitian Creole** and other low-resource languages often lack enough data for developing accurate tokenization systems. This data scarcity makes it difficult for tokenizers to generalize well across various use cases.
 
 These challenges require careful consideration when designing tokenization strategies for African languages. Tailoring tokenization models to the specific features of these languages will lead to more accurate and effective NLP tools for African languages. As the field grows, ongoing research and collaboration are key to developing solutions that work in these multilingual, morphologically complex environments. 
-
 
 ## Tokenization Approaches  
 
